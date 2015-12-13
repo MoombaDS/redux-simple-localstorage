@@ -1,0 +1,28 @@
+{
+  "name": "redux-simple-localstorage",
+  "version": "1.0.0",
+  "description": "Ridiculously simple implementation for serialising the entire Redux store to local storage and retreiving it on application restart.",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "babel -d lib src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoombaDS/redux-simple-localstorage.git"
+  },
+  "keywords": [
+    "Redux",
+    "localstorage"
+  ],
+  "author": "Ioseff Griffith <joe@rm-audio.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MoombaDS/redux-simple-localstorage/issues"
+  },
+  "homepage": "https://github.com/MoombaDS/redux-simple-localstorage#readme",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13"
+  }
+}
