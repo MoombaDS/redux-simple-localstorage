@@ -6,6 +6,6 @@ export const saveLocal = key => store => next => action => {
   	return result;
 };
 
-export const getSavedState = key => {
+export const savedState = key => {
 	return JSON.parse(window.localStorage.getItem(key));
 };
