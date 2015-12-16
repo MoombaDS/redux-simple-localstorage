@@ -1,7 +1,7 @@
 {
   "name": "redux-simple-localstorage",
-  "version": "1.0.0",
-  "description": "Ridiculously simple implementation for serialising the entire Redux store to local storage and retreiving it on application restart.",
+  "version": "1.0.1",
+  "description": "Ridiculously simple implementation for serialising the entire Redux store to local storage and retrieving it on application restart.",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "babel -d lib src/",
