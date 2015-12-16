@@ -9,17 +9,25 @@ Ridiculously simple implementation for serialising the entire Redux store to loc
 npm install --save redux-simple-localstorage
 ```
 
-To enable, use [`applyMiddleware()`](http://rackt.github.io/redux/docs/api/applyMiddleware.html) and pass the `savedState` to the reducers:
+## Usage
+
+The module exports a single function. Call that with the localStorage key, and you get an object with a `read` and `write` method:
+
+```js
+import ReduxLocalstorage from "redux-simple-localstorage"
+const {read,write} = ReduxLocalstorage("myKey");
+```
+
+Now use `write` as a middleware and the result of `read` as initial state when you define your store:
 
 ```js
 import { createStore, applyMiddleware } from "redux";
 import { saveLocal, savedState } from "redux-simple-localstorage";
+
 import rootReducer from "./reducers/index";
 import initialState from "./initialstate";
 
-// create a store that will continuously save its state to localStorage at `"Key"`
-// and use eventual previously stored state at app start
-const store = applyMiddleware(saveLocal("Key"))(createStore)(rootReducer, savedState("Key") || initialState);
+const store = applyMiddleware(write)(createStore)(rootReducer, read() || initialState);
 ```
 
 ## License
