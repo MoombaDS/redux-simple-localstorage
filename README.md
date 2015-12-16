@@ -1,7 +1,7 @@
 redux-simple-localstorage
 =============
 
-Ridiculously simple implementation for serialising the entire Redux store to local storage and retreiving it on application restart.
+Ridiculously simple implementation for serialising the entire Redux store to local storage and retrieving it on application restart.
 
 ## Installation
 
