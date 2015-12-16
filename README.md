@@ -17,8 +17,9 @@ import { saveLocal, savedState } from "redux-simple-localstorage";
 import rootReducer from "./reducers/index";
 import initialState from "./initialstate";
 
-// create a store that has saveLocal middleware with the key as a bound parameter
-const store = applyMiddleware(saveLocal.bind(null, "Key"))(createStore)(rootReducer, savedState("Key") || initialState());
+// create a store that will continuously save its state to localStorage at `"Key"`
+// and use eventual previously stored state at app start
+const store = applyMiddleware(saveLocal("Key"))(createStore)(rootReducer, savedState("Key") || initialState);
 ```
 
 ## License
