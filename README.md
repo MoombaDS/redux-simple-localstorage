@@ -22,7 +22,8 @@ Now use `write` as a middleware and the result of `read` as initial state when y
 
 ```js
 import { createStore, applyMiddleware } from "redux";
-import { saveLocal, savedState } from "redux-simple-localstorage";
+import ReduxLocalstorage from "redux-simple-localstorage"
+const {read,write} = ReduxLocalstorage("myKey");
 
 import rootReducer from "./reducers/index";
 import initialState from "./initialstate";
